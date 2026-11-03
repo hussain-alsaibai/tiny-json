@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tiny-json"
+version = "0.1.0"
+description = "Zero-dependency JSON pipeline for Python: query, transform, merge, validate"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.8"
+keywords = ["json", "pipeline", "transform", "query", "merge", "validate", "data"]
+authors = [
+    { name = "Hussain Al-Saibai", email = "hussain.alsaibai@gmail.com" }
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Utilities",
+]
+
+[project.urls]
+Homepage = "https://github.com/hussain-alsaibai/tiny-json"
+Repository = "https://github.com/hussain-alsaibai/tiny-json"
+Issues = "https://github.com/hussain-alsaibai/tiny-json/issues"
+
+[tool.setuptools]
+py-modules = ["tiny_json"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["tiny_json*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
