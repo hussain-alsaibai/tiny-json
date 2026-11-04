@@ -53,7 +53,13 @@ new_state = JSONPipeline(state).merge(update).data
 - **Query**: Dot-notation access for nested dicts and lists.
 - **Transform**: Map source paths to new keys or run callables.
 - **Merge**: Deep recursive merge for state updates.
-- **Validate**: Lightweight type checking.
+- **Validate**: Lightweight type checking. A missing or `None` value passes by
+  default; pass `require_all=True` when the schema's keys are mandatory:
+
+  ```python
+  JSONPipeline({"a": 1}).validate({"a": int, "b": str})                   # True
+  JSONPipeline({"a": 1}).validate({"a": int, "b": str}, require_all=True)  # False
+  ```
 - **Zero Deps**: Stdlib only.
 
 ## 🧪 Testing
